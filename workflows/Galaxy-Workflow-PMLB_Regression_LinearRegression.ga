@@ -1,0 +1,139 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "PMLB_Regression_LinearRegression", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "content_id": "sklearn_build_pipeline", 
+            "errors": null, 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [], 
+            "label": null, 
+            "name": "Pipeline Builder", 
+            "outputs": [
+                {
+                    "name": "outfile", 
+                    "type": "zip"
+                }
+            ], 
+            "position": {
+                "left": 166.7166748046875, 
+                "top": 132
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "outfile"
+                }
+            }, 
+            "tool_id": "sklearn_build_pipeline", 
+            "tool_state": "{\"final_estimator\": \"{\\\"estimator_selector\\\": {\\\"text_params\\\": \\\"\\\", \\\"selected_estimator\\\": \\\"LinearRegression\\\", \\\"selected_module\\\": \\\"linear_model\\\", \\\"__current_case__\\\": 1}}\", \"pipeline_component\": \"[{\\\"__index__\\\": 0, \\\"component_selector\\\": {\\\"fs_algorithm_selector\\\": {\\\"options\\\": {\\\"k\\\": \\\"10\\\"}, \\\"score_func\\\": \\\"f_regression\\\", \\\"__current_case__\\\": 3, \\\"selected_algorithm\\\": \\\"SelectKBest\\\"}, \\\"__current_case__\\\": 2, \\\"component_type\\\": \\\"feature_selection\\\"}}]\", \"__rerun_remap_job_id__\": null, \"__page__\": null}", 
+            "tool_version": "0.9", 
+            "type": "tool", 
+            "uuid": "763ee10a-3be1-4bfa-95ab-45fcf1472fd5", 
+            "workflow_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "content_id": null, 
+            "errors": null, 
+            "id": 1, 
+            "input_connections": {}, 
+            "inputs": [], 
+            "label": null, 
+            "name": "Input dataset collection", 
+            "outputs": [], 
+            "position": {
+                "left": 146.2166748046875, 
+                "top": 396
+            }, 
+            "tool_id": null, 
+            "tool_state": "{\"collection_type\": \"list\"}", 
+            "tool_version": null, 
+            "type": "data_collection_input", 
+            "uuid": "5c16adbe-2565-449e-b3ef-f3e1e6f5599a", 
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "output", 
+                    "uuid": "bd5f16b8-fdb5-4326-a36a-96eb9a0da61d"
+                }
+            ]
+        }, 
+        "2": {
+            "annotation": "", 
+            "content_id": "sklearn_searchcv", 
+            "errors": null, 
+            "id": 2, 
+            "input_connections": {
+                "input_options|infile1": {
+                    "id": 1, 
+                    "output_name": "output"
+                }, 
+                "input_options|infile2": {
+                    "id": 1, 
+                    "output_name": "output"
+                }, 
+                "search_schemes|infile_pipeline": {
+                    "id": 0, 
+                    "output_name": "outfile"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Hyperparameter Search", 
+                    "name": "search_schemes"
+                }, 
+                {
+                    "description": "runtime parameter for tool Hyperparameter Search", 
+                    "name": "input_options"
+                }, 
+                {
+                    "description": "runtime parameter for tool Hyperparameter Search", 
+                    "name": "input_options"
+                }
+            ], 
+            "label": null, 
+            "name": "Hyperparameter Search", 
+            "outputs": [
+                {
+                    "name": "outfile_result", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "outfile_estimator", 
+                    "type": "zip"
+                }
+            ], 
+            "position": {
+                "left": 406.2166748046875, 
+                "top": 180
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutfile_estimator": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "outfile_estimator"
+                }
+            }, 
+            "tool_id": "sklearn_searchcv", 
+            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"save\": \"\\\"true\\\"\", \"search_schemes\": \"{\\\"search_params_builder\\\": {\\\"param_set\\\": [{\\\"__index__\\\": 0, \\\"search_param_selector\\\": {\\\"search_p\\\": \\\"k: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\\\", \\\"__current_case__\\\": 1, \\\"selected_param_type\\\": \\\"prep_1_p\\\"}}, {\\\"__index__\\\": 1, \\\"search_param_selector\\\": {\\\"search_p\\\": \\\"fit_intercept: [True, False]\\\", \\\"__current_case__\\\": 0, \\\"selected_param_type\\\": \\\"final_estimator_p\\\"}}]}, \\\"selected_search_scheme\\\": \\\"GridSearchCV\\\", \\\"infile_pipeline\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"options\\\": {\\\"scoring\\\": {\\\"secondary_scoring\\\": null, \\\"__current_case__\\\": 26, \\\"primary_scoring\\\": \\\"r2\\\"}, \\\"verbose\\\": \\\"0\\\", \\\"refit\\\": \\\"true\\\", \\\"return_train_score\\\": \\\"false\\\", \\\"iid\\\": \\\"true\\\", \\\"error_score\\\": \\\"false\\\", \\\"pre_dispatch\\\": \\\"all\\\", \\\"cv\\\": \\\"KFold(n_splits=3, shuffle=True, random_state=3111696)\\\"}, \\\"__current_case__\\\": 0}\", \"input_options\": \"{\\\"infile2\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"infile1\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"column_selector_options_1\\\": {\\\"col1\\\": \\\"target\\\", \\\"__current_case__\\\": 3, \\\"selected_column_selector_option\\\": \\\"all_but_by_header_name\\\"}, \\\"column_selector_options_2\\\": {\\\"selected_column_selector_option2\\\": \\\"by_header_name\\\", \\\"col2\\\": \\\"target\\\", \\\"__current_case__\\\": 1}, \\\"header2\\\": \\\"true\\\", \\\"header1\\\": \\\"true\\\", \\\"__current_case__\\\": 0, \\\"selected_input\\\": \\\"tabular\\\"}\"}", 
+            "tool_version": "0.9", 
+            "type": "tool", 
+            "uuid": "51925283-daf5-49b4-8504-75eb1ec0dd78", 
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "outfile_result", 
+                    "uuid": "ddfcbb43-d81e-4d89-9188-fbc839cd388c"
+                }
+            ]
+        }
+    }, 
+    "tags": [], 
+    "uuid": "4543f9e9-a703-4812-98e3-061bdb01f40b"
+}
