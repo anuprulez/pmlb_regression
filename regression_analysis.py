@@ -2,6 +2,7 @@ import sys
 import time
 import pandas as pd
 from matplotlib import pyplot as plt
+from matplotlib import rcParams
 import os
 import numpy as np
 import warnings
@@ -52,7 +53,7 @@ for clf in clf_names_dir:
     mean_r2 = np.mean(r2_scores)
     clf_mean_r2.append(mean_r2)
     r2_dict[clf] = mean_r2
-    mean_fit_time = np.sum(fit_time)
+    mean_fit_time = np.mean(fit_time)
     fit_time_dict[clf] = mean_fit_time
     print("Mean R2 score for %s regressor: %0.2f" % (clf, mean_r2))
     print("Total fit time for %s regressor: %0.4f seconds" % (clf, mean_fit_time))
@@ -71,21 +72,77 @@ for clf in clf_names_dir:
 fit_times_list = list()
 r2_score_list = list()
 names_clf = list()
+fit_time = list()
+trace_time_acc_list = list()
 ctr = 0
+
+NUM_COLORS = 16
+cm = plt.get_cmap('tab20c')
+colors = [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)]
+
+rcParams["font.size"] = 24
+rcParams["font.family"] = "Times New Roman"
+
 for item in r2_dict.items():
     names_clf.append(item[0])
-    plt.scatter(fit_time_dict[item[0]], item[1])
+    fit_time.append(fit_time_dict[item[0]])
+    r2_score_list.append(item[1])
+    plt.scatter(fit_time_dict[item[0]], item[1], color=colors[ctr])
+    trace_time_acc = go.Scatter(
+        x = [fit_time_dict[item[0]]],
+        y = [item[1]],
+        name=item[0],
+        mode = 'markers',
+        marker = dict(
+            size = 10,
+            color = 'rgba' + str(colors[ctr]),
+        )
+    )
+    trace_time_acc_list.append(trace_time_acc)
     ctr += 1
 
-plt.legend(tuple(names_clf))
-plt.xlabel('Total fit time (seconds)')
-plt.ylabel('Mean R2 score')
-plt.title('Mean R2 score vs total fit time for regressors')
-plt.grid(True)
-plt.show()
+layout_time_acc = dict(
+    title='Mean fit time vs R2 regression score',
+    font=dict(family='Times new roman', size=24),
+    yaxis=dict(
+        showgrid=True,
+        showline=True,
+        showticklabels=True,
+        title='Mean R2 regression score',
+        titlefont=dict(
+            family='Times new roman',
+            size=24
+        )
+    ),
+    xaxis=dict(
+        zeroline=False,
+        showline=True,
+        showticklabels=True,
+        showgrid=True,
+        title='Mean fit time (in seconds)',
+        #tickangle=-45,
+        titlefont=dict(
+            family='Times new roman',
+            size=24
+        )
+    ),
+    margin=dict(
+        l=100,
+        r=20,
+        t=70,
+        b=200,
+    ),
+    paper_bgcolor='rgb(248, 248, 255)',
+    plot_bgcolor='rgb(248, 248, 255)',
+)
+
+fig_tp = go.Figure(data=trace_time_acc_list, layout=layout_time_acc)
+plotly.offline.plot(fig_tp, filename="time_vs_acc.png", auto_open=True)
 
 print("-------------x------------------x---------------")
 
+
+# plot bar chart for regressors
 r2_dict = sorted(r2_dict.items(), key=lambda kv: kv[1])
 
 cf = list()
@@ -94,9 +151,6 @@ r2 = list()
 for item in r2_dict:
     cf.append(item[0])
     r2.append(item[1])
-
-
-# plot bar chart for regressors
 
 trace0 = go.Bar(
     x=r2,
