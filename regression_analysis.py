@@ -137,7 +137,8 @@ layout_time_acc = dict(
 )
 
 fig_tp = go.Figure(data=trace_time_acc_list, layout=layout_time_acc)
-plotly.offline.plot(fig_tp, filename="time_vs_acc.png", auto_open=True)
+plotly.offline.plot(fig_tp, filename="fit_time_r2.png", auto_open=True)
+#plotly.io.write_image(fig_tp, "plots/fit_time_r2.png")
 
 print("-------------x------------------x---------------")
 
@@ -200,8 +201,8 @@ layout = dict(
 )
 
 fig_tp = go.Figure(data=[trace0], layout=layout)
-plotly.offline.plot(fig_tp, filename="output_actual_vs_pred.png", auto_open=True)
-
+plotly.offline.plot(fig_tp, filename="r2_scores.png", auto_open=True)
+#plotly.io.write_image(fig_tp, "plots/r2_scores.png")
 print("-------------x------------------x---------------")
 
 # plot number of samples in each dataset
@@ -266,7 +267,7 @@ layout1 = dict(
 
 fig_tp = go.Figure(data=[trace1], layout=layout1)
 plotly.offline.plot(fig_tp, filename="size_datasets.png", auto_open=True)
-
+#plotly.io.write_image(fig_tp, "plots/size_datasets.png")
 print("-------------x------------------x---------------")
 
 end_time = time.time()
