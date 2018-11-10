@@ -10,6 +10,8 @@ import warnings
 import plotly
 import plotly.graph_objs as go
 from plotly import tools
+import plotly.io as pio
+
 
 warnings.filterwarnings('ignore')
 
@@ -58,13 +60,6 @@ for clf in clf_names_dir:
     print("Mean R2 score for %s regressor: %0.2f" % (clf, mean_r2))
     print("Total fit time for %s regressor: %0.4f seconds" % (clf, mean_fit_time))
 
-    '''plt.figure()
-    plt.plot(r2_scores, color='r')
-    plt.grid(True)
-    plt.xlabel("Number of datasets")
-    plt.ylabel("R2 regression score")
-    plt.title(('Best R2 scores for %d datasets (%s regression)' % (len(common_fileset), clf)))
-    plt.show()'''
     print("-------------x------------------x---------------x---------------")
     print(" ")
     
@@ -75,6 +70,7 @@ names_clf = list()
 fit_time = list()
 trace_time_acc_list = list()
 ctr = 0
+ao = False
 
 NUM_COLORS = 16
 cm = plt.get_cmap('tab20c')
@@ -87,14 +83,14 @@ for item in r2_dict.items():
     names_clf.append(item[0])
     fit_time.append(fit_time_dict[item[0]])
     r2_score_list.append(item[1])
-    plt.scatter(fit_time_dict[item[0]], item[1], color=colors[ctr])
+    plt.scatter(fit_time_dict[item[0]], item[1])
     trace_time_acc = go.Scatter(
         x = [fit_time_dict[item[0]]],
         y = [item[1]],
         name=item[0],
         mode = 'markers',
         marker = dict(
-            size = 10,
+            size = 15,
             color = 'rgba' + str(colors[ctr]),
         )
     )
@@ -120,7 +116,6 @@ layout_time_acc = dict(
         showticklabels=True,
         showgrid=True,
         title='Mean fit time (in seconds)',
-        #tickangle=-45,
         titlefont=dict(
             family='Times new roman',
             size=24
@@ -128,20 +123,19 @@ layout_time_acc = dict(
     ),
     margin=dict(
         l=100,
-        r=20,
-        t=70,
-        b=200,
+        r=100,
+        t=100,
+        b=100
     ),
     paper_bgcolor='rgb(248, 248, 255)',
     plot_bgcolor='rgb(248, 248, 255)',
 )
 
 fig_tp = go.Figure(data=trace_time_acc_list, layout=layout_time_acc)
-plotly.offline.plot(fig_tp, filename="fit_time_r2.png", auto_open=True)
-#plotly.io.write_image(fig_tp, "plots/fit_time_r2.png")
+plotly.offline.plot(fig_tp, filename="fit_time_r2.png", auto_open=ao)
+pio.write_image(fig_tp, 'plots/fit_time_r2.png', width=1200, height=800)
 
 print("-------------x------------------x---------------")
-
 
 # plot bar chart for regressors
 r2_dict = sorted(r2_dict.items(), key=lambda kv: kv[1])
@@ -161,11 +155,10 @@ trace0 = go.Bar(
         line=dict(
             color='rgba(50, 171, 96, 0.6)',
             width=1),
-    ),
+        ),
     name='R2 regression scores vs regressors',
     orientation='h'
 )
-
 
 layout = dict(
     title='R2 regression scores vs regressors',
@@ -201,8 +194,8 @@ layout = dict(
 )
 
 fig_tp = go.Figure(data=[trace0], layout=layout)
-plotly.offline.plot(fig_tp, filename="r2_scores.png", auto_open=True)
-#plotly.io.write_image(fig_tp, "plots/r2_scores.png")
+plotly.offline.plot(fig_tp, filename="r2_scores.png", auto_open=ao)
+pio.write_image(fig_tp, "plots/r2_scores.png", width=900, height=700)
 print("-------------x------------------x---------------")
 
 # plot number of samples in each dataset
@@ -224,12 +217,10 @@ trace1 = go.Bar(
     marker=dict(
         color='rgba(50, 171, 96, 0.6)',
         line=dict(
-            color='rgba(50, 171, 96, 0.6)',
-            width=1),
-    ),
+            color='rgba(50, 171, 96, 0.6)', width=1),
+        ),
     name='Size of datasets',
 )
-
 
 layout1 = dict(
     title='Size of datasets',
@@ -266,8 +257,8 @@ layout1 = dict(
 )
 
 fig_tp = go.Figure(data=[trace1], layout=layout1)
-plotly.offline.plot(fig_tp, filename="size_datasets.png", auto_open=True)
-#plotly.io.write_image(fig_tp, "plots/size_datasets.png")
+plotly.offline.plot(fig_tp, filename="size_datasets.png", auto_open=ao)
+pio.write_image(fig_tp, "plots/size_datasets.png", width=900, height=700)
 print("-------------x------------------x---------------")
 
 end_time = time.time()
