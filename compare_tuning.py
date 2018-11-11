@@ -112,10 +112,11 @@ hyp_tuning_res = list()
 no_hyp_tuning_res = list()
 ctr = 1
 trace_tng_ntng_list = list()
-
+clf_names = list()
 for clf in r2_dict_no_tuning:
     hyp_tuning_res.append(r2_dict_tuning[clf])
     no_hyp_tuning_res.append(r2_dict_no_tuning[clf])
+    clf_names.append(clf)
     trace_tng_ntng = go.Scatter(
         x = [r2_dict_no_tuning[clf]],
         y = [r2_dict_tuning[clf]],
@@ -179,9 +180,72 @@ layout_tng_ntng = dict(
     paper_bgcolor='rgb(248, 248, 255)',
     plot_bgcolor='rgb(248, 248, 255)',
 )
-fig_actual_pred = go.Figure(data=trace_tng_ntng_list, layout=layout_tng_ntng)
-plotly.offline.plot(fig_actual_pred, filename="hyper_performance.html", auto_open=ao)
-pio.write_image(fig_actual_pred, 'plots/hyper_performance.png', width=1200, height=800)    
+#fig_actual_pred = go.Figure(data=trace_tng_ntng_list, layout=layout_tng_ntng)
+#plotly.offline.plot(fig_actual_pred, filename="hyper_performance.html", auto_open=ao)
+#pio.write_image(fig_actual_pred, 'plots/hyper_performance.png', width=1200, height=800)'''
+
+# ----------------------------------
+
+trace_tuning = go.Bar(
+    x=hyp_tuning_res,
+    y=clf_names_no_tuning,
+    marker=dict(
+        color='rgba(50, 171, 96, 0.6)',
+        line=dict(
+            width=1),
+        ),
+    name='Hyperparameter tuning',
+    orientation='h'
+)
+
+trace_notuning = go.Bar(
+    x=no_hyp_tuning_res,
+    y=clf_names_no_tuning,
+    marker=dict(
+        color='rgba(50, 51, 96, 0.6)',
+        line=dict(
+            width=1),
+        ),
+    name='No hyperparameter tuning',
+    orientation='h'
+)
+
+layout = dict(
+    title='R2 scores of regressors for tuning and no tuning of hyperparameters',
+    font=dict(family='Times new roman', size=24),
+    yaxis=dict(
+        showgrid=True,
+        showline=True,
+        showticklabels=True,
+        titlefont=dict(
+            family='Times new roman',
+            size=24
+        )
+    ),
+    xaxis=dict(
+        zeroline=False,
+        showline=True,
+        showticklabels=True,
+        showgrid=True,
+        title='R2 scores',
+        titlefont=dict(
+            family='Times new roman',
+            size=24
+        )
+    ),
+    margin=dict(
+        l=200,
+        r=20,
+        t=70,
+        b=70,
+    ),
+    paper_bgcolor='rgb(248, 248, 255)',
+    plot_bgcolor='rgb(248, 248, 255)',
+)
+
+fig_tp = go.Figure(data=[trace_tuning, trace_notuning], layout=layout)
+plotly.offline.plot(fig_tp, filename="r2_scores_bar", auto_open=ao)
+pio.write_image(fig_tp, "plots/r2_scores_bar.png", width=900, height=700) 
 
 end_time = time.time()
 print('Total time taken: %d seconds' % int(end_time - start_time))
