@@ -25,7 +25,7 @@ start_time = time.time()
 datasets = ["228_elusage.tsv", "485_analcatdata_vehicle.tsv", "523_analcatdata_neavote.tsv", \
             '663_rabe_266.tsv', '687_sleuth_ex1605.tsv']
 
-#datasets = os.listdir("data_used/")
+datasets = os.listdir("data_used/")
 
 #datasets = ["228_elusage.tsv"]
 
@@ -40,7 +40,7 @@ parameters = [{ \
     'regression__random_state': [3111696] \
 }]
 
-fontsz = 24
+fontsz = 30
 ao = False
 
 print('Training started...')
@@ -114,7 +114,7 @@ for d_set in datasets:
             )
         ),
         margin=dict(
-            l=100,
+            l=150,
             r=100,
             t=100,
             b=100
@@ -125,7 +125,7 @@ for d_set in datasets:
     fn = "pred_actual_" +  d_set + ".png"
     fig_actual_pred = go.Figure(data=[trace_actual_pred, trace_x_eq_y], layout=layout_actual_pred)
     plotly.offline.plot(fig_actual_pred, filename=fn, auto_open=ao)
-    pio.write_image(fig_actual_pred, 'plots/' + fn, width=1200, height=800)
+    pio.write_image(fig_actual_pred, 'plots/' + fn, width=1400, height=800)
     
     print("Finished dataset: %s" % d_set)
     print("------------------------------------------------------------")

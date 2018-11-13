@@ -130,10 +130,10 @@ for clf in r2_dict_no_tuning:
     trace_tng_ntng_list.append(trace_tng_ntng)
     ctr += 1
 
-fontsz = 24
+fontsz = 30
 ao = True
   
-x_eq_y = list(range( int(min(hyp_tuning_res) - 2), int(max(no_hyp_tuning_res) + 2) ))
+'''x_eq_y = list(range( int(min(hyp_tuning_res) - 2), int(max(no_hyp_tuning_res) + 2) ))
 
 trace_x_eq_y = go.Scatter(
     x = x_eq_y,
@@ -179,7 +179,8 @@ layout_tng_ntng = dict(
     ),
     paper_bgcolor='rgb(248, 248, 255)',
     plot_bgcolor='rgb(248, 248, 255)',
-)
+)'''
+
 #fig_actual_pred = go.Figure(data=trace_tng_ntng_list, layout=layout_tng_ntng)
 #plotly.offline.plot(fig_actual_pred, filename="hyper_performance.html", auto_open=ao)
 #pio.write_image(fig_actual_pred, 'plots/hyper_performance.png', width=1200, height=800)'''
@@ -212,14 +213,14 @@ trace_notuning = go.Bar(
 
 layout = dict(
     title='R2 scores of regressors for tuning and no tuning of hyperparameters',
-    font=dict(family='Times new roman', size=24),
+    font=dict(family='Times new roman', size=fontsz),
     yaxis=dict(
         showgrid=True,
         showline=True,
         showticklabels=True,
         titlefont=dict(
             family='Times new roman',
-            size=24
+            size=fontsz
         )
     ),
     xaxis=dict(
@@ -227,14 +228,14 @@ layout = dict(
         showline=True,
         showticklabels=True,
         showgrid=True,
-        title='R2 scores',
+        title='Mean R2 scores',
         titlefont=dict(
             family='Times new roman',
-            size=24
+            size=fontsz
         )
     ),
     margin=dict(
-        l=200,
+        l=220,
         r=20,
         t=70,
         b=70,
@@ -245,7 +246,7 @@ layout = dict(
 
 fig_tp = go.Figure(data=[trace_tuning, trace_notuning], layout=layout)
 plotly.offline.plot(fig_tp, filename="r2_scores_bar", auto_open=ao)
-pio.write_image(fig_tp, "plots/r2_scores_bar.png", width=900, height=700) 
+pio.write_image(fig_tp, "plots/r2_scores_bar.png", width=1200, height=800) 
 
 end_time = time.time()
 print('Total time taken: %d seconds' % int(end_time - start_time))

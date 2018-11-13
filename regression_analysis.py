@@ -16,7 +16,7 @@ import plotly.io as pio
 warnings.filterwarnings('ignore')
 
 start_time = time.time()
-folder_name = "european_days/"
+folder_name = "tuning/"
 clf_names_dir = os.listdir(folder_name)
 
 
@@ -76,8 +76,9 @@ NUM_COLORS = 16
 cm = plt.get_cmap('tab20c')
 colors = [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)]
 
-rcParams["font.size"] = 24
+rcParams["font.size"] = 30
 rcParams["font.family"] = "Times New Roman"
+fontsz = 30
 
 for item in r2_dict.items():
     names_clf.append(item[0])
@@ -98,8 +99,8 @@ for item in r2_dict.items():
     ctr += 1
 
 layout_time_acc = dict(
-    title='Mean fit time vs R2 regression score',
-    font=dict(family='Times new roman', size=24),
+    title='Fit time vs R2 regression score',
+    font=dict(family='Times new roman', size=fontsz),
     yaxis=dict(
         showgrid=True,
         showline=True,
@@ -107,7 +108,7 @@ layout_time_acc = dict(
         title='Mean R2 regression score',
         titlefont=dict(
             family='Times new roman',
-            size=24
+            size=fontsz
         )
     ),
     xaxis=dict(
@@ -118,7 +119,7 @@ layout_time_acc = dict(
         title='Mean fit time (in seconds)',
         titlefont=dict(
             family='Times new roman',
-            size=24
+            size=fontsz
         )
     ),
     margin=dict(
@@ -162,14 +163,14 @@ trace0 = go.Bar(
 
 layout = dict(
     title='R2 regression scores vs regressors',
-    font=dict(family='Times new roman', size=24),
+    font=dict(family='Times new roman', size=fontsz),
     yaxis=dict(
         showgrid=True,
         showline=True,
         showticklabels=True,
         titlefont=dict(
             family='Times new roman',
-            size=24
+            size=fontsz
         )
     ),
     xaxis=dict(
@@ -177,14 +178,14 @@ layout = dict(
         showline=True,
         showticklabels=True,
         showgrid=True,
-        title='R2 scores',
+        title='Mean R2 scores',
         titlefont=dict(
             family='Times new roman',
-            size=24
+            size=fontsz
         )
     ),
     margin=dict(
-        l=200,
+        l=250,
         r=20,
         t=70,
         b=70,
@@ -195,7 +196,7 @@ layout = dict(
 
 fig_tp = go.Figure(data=[trace0], layout=layout)
 plotly.offline.plot(fig_tp, filename="r2_scores.png", auto_open=ao)
-pio.write_image(fig_tp, "plots/r2_scores.png", width=900, height=700)
+pio.write_image(fig_tp, "plots/r2_scores.png", width=1300, height=800)
 print("-------------x------------------x---------------")
 
 # plot number of samples in each dataset
@@ -224,7 +225,7 @@ trace1 = go.Bar(
 
 layout1 = dict(
     title='Size of datasets',
-    font=dict(family='Times new roman', size=24),
+    font=dict(family='Times new roman', size=fontsz),
     yaxis=dict(
         showgrid=True,
         showline=True,
@@ -232,7 +233,7 @@ layout1 = dict(
         title='Size of datasets',
         titlefont=dict(
             family='Times new roman',
-            size=24
+            size=fontsz
         )
     ),
     xaxis=dict(
@@ -243,7 +244,7 @@ layout1 = dict(
         title='Number of datasets',
         titlefont=dict(
             family='Times new roman',
-            size=24
+            size=fontsz
         )
     ),
     margin=dict(
@@ -258,7 +259,7 @@ layout1 = dict(
 
 fig_tp = go.Figure(data=[trace1], layout=layout1)
 plotly.offline.plot(fig_tp, filename="size_datasets.png", auto_open=ao)
-pio.write_image(fig_tp, "plots/size_datasets.png", width=900, height=700)
+pio.write_image(fig_tp, "plots/size_datasets.png", width=1200, height=800)
 print("-------------x------------------x---------------")
 
 end_time = time.time()
