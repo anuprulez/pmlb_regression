@@ -128,8 +128,8 @@ layout_time_acc = dict(
         t=100,
         b=100
     ),
-    paper_bgcolor='rgb(248, 248, 255)',
-    plot_bgcolor='rgb(248, 248, 255)',
+    #paper_bgcolor='rgb(248, 248, 255)',
+    #plot_bgcolor='rgb(248, 248, 255)',
 )
 
 fig_tp = go.Figure(data=trace_time_acc_list, layout=layout_time_acc)
@@ -190,8 +190,8 @@ layout = dict(
         t=70,
         b=70,
     ),
-    paper_bgcolor='rgb(248, 248, 255)',
-    plot_bgcolor='rgb(248, 248, 255)',
+    #paper_bgcolor='rgb(248, 248, 255)',
+    #plot_bgcolor='rgb(248, 248, 255)',
 )
 
 fig_tp = go.Figure(data=[trace0], layout=layout)
@@ -253,8 +253,8 @@ layout1 = dict(
         t=70,
         b=70,
     ),
-    paper_bgcolor='rgb(248, 248, 255)',
-    plot_bgcolor='rgb(248, 248, 255)',
+    #paper_bgcolor='rgb(248, 248, 255)',
+    #plot_bgcolor='rgb(248, 248, 255)',
 )
 
 fig_tp = go.Figure(data=[trace1], layout=layout1)

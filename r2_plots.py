@@ -119,8 +119,8 @@ for d_set in datasets:
             t=100,
             b=100
         ),
-        paper_bgcolor='rgb(248, 248, 255)',
-        plot_bgcolor='rgb(248, 248, 255)',
+        #paper_bgcolor='rgb(248, 248, 255)',
+        #plot_bgcolor='rgb(248, 248, 255)',
     )
     fn = "pred_actual_" +  d_set + ".png"
     fig_actual_pred = go.Figure(data=[trace_actual_pred, trace_x_eq_y], layout=layout_actual_pred)

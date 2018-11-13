@@ -240,8 +240,8 @@ layout = dict(
         t=70,
         b=70,
     ),
-    paper_bgcolor='rgb(248, 248, 255)',
-    plot_bgcolor='rgb(248, 248, 255)',
+    #paper_bgcolor='rgb(248, 248, 255)',
+    #plot_bgcolor='rgb(248, 248, 255)',
 )
 
 fig_tp = go.Figure(data=[trace_tuning, trace_notuning], layout=layout)
