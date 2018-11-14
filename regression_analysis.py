@@ -16,7 +16,7 @@ import plotly.io as pio
 warnings.filterwarnings('ignore')
 
 start_time = time.time()
-folder_name = "115_datasets_results/"
+folder_name = "european_days/"
 clf_names_dir = os.listdir(folder_name)
 
 
