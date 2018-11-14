@@ -134,7 +134,7 @@ trace_tuning = go.Bar(
         line=dict(
             width=1),
         ),
-    name='Hyperparameter tuning',
+    name='With optimisation',
     orientation='h'
 )
 
@@ -146,12 +146,12 @@ trace_notuning = go.Bar(
         line=dict(
             width=1),
         ),
-    name='No hyperparameter tuning',
+    name='Without optimisation',
     orientation='h'
 )
 
 layout = dict(
-    title='R2 scores of regressors for tuning and no tuning of hyperparameters',
+    title='R2 scores of regressors with and without hyperparameter optimisation',
     font=dict(family='Times new roman', size=fontsz),
     yaxis=dict(
         showgrid=True,

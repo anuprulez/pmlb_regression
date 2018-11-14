@@ -16,7 +16,7 @@ import plotly.io as pio
 warnings.filterwarnings('ignore')
 
 start_time = time.time()
-folder_name = "european_days/"
+folder_name = "115_datasets_results/"
 clf_names_dir = os.listdir(folder_name)
 
 
@@ -71,10 +71,10 @@ trace_time_acc_list = list()
 ctr = 0
 ao = False
 
-NUM_COLORS = 16
+NUM_COLORS = len(clf_names)
 cm = plt.get_cmap('RdYlBu')
 colors = [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)]
-fontsz = 26
+fontsz = 18
 
 for item in r2_dict.items():
     names_clf.append(item[0])
@@ -136,7 +136,7 @@ pio.write_image(fig_tp, 'plots/fit_time_r2.png', width=1200, height=800)
 
 print("-------------x------------------x---------------")
 
-fontsz = 32
+#fontsz = 32
 # plot bar chart for regressors
 r2_dict = sorted(r2_dict.items(), key=lambda kv: kv[1])
 
