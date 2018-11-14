@@ -21,16 +21,9 @@ folder_name_no_tuning = "no_tuning/"
 clf_names_dir_tuning = os.listdir(folder_name_tuning)
 clf_names_dir_no_tuning = os.listdir(folder_name_no_tuning)
 
-
-def check_file(f_name):
-    for clf in clf_names_dir_tuning:
-        data_path = folder_name_tuning + clf
-        files = [f for f in os.listdir(data_path)]
-        if f_name not in files:
-            return False
-            break
-    return True
-
+file_obj = open("file_names.txt", "r")
+dataset_names = file_obj.read()
+dataset_names = dataset_names.split("\n")
 
 clf_names_tuning = list()
 clf_mean_r2_tuning = list()
@@ -46,8 +39,7 @@ for clf in clf_names_dir_tuning:
     fit_time = list()
     common_fileset = list()
     for f_name in files:
-        if_file_present = check_file(f_name)
-        if if_file_present is True:
+        if f_name in dataset_names: 
             common_fileset.append(f_name)
             f_path = data_path + "/" + f_name
             df = pd.read_csv(f_path, sep="\t")
@@ -82,8 +74,7 @@ for clf in clf_names_dir_no_tuning:
     r2_scores = list()
     fit_time = list()
     for f_name in files:
-        if_file_present = check_file(f_name)
-        if if_file_present is True:
+        if f_name in dataset_names:
             f_path = data_path + "/" + f_name
             df = pd.read_csv(f_path, sep="\t")
             rank_test_score = df[df["rank_test_score"] == 1]
@@ -132,58 +123,6 @@ for clf in r2_dict_no_tuning:
 
 fontsz = 30
 ao = True
-  
-'''x_eq_y = list(range( int(min(hyp_tuning_res) - 2), int(max(no_hyp_tuning_res) + 2) ))
-
-trace_x_eq_y = go.Scatter(
-    x = x_eq_y,
-    y = x_eq_y,
-    mode = 'lines',
-    name = 'x = y curve',
-    marker = dict(
-        color = 'rgba' + str(colors[0]),
-    )
-)
-
-trace_tng_ntng_list.append(trace_x_eq_y)
-
-layout_tng_ntng = dict(
-    title = "R2 scores of regressors for tuning and no tuning of hyperparameters",
-    font = dict(family='Times new roman', size=fontsz),
-    yaxis = dict(
-        showgrid=True,
-        showline=True,
-        showticklabels=True,
-        title='Performance using tuned hyperparameters',
-        titlefont=dict(
-            family='Times new roman',
-            size=fontsz
-        )
-    ),
-    xaxis=dict(
-        zeroline=False,
-        showline=True,
-        showticklabels=True,
-        showgrid=True,
-        title='Performance using no hyperparameters',
-        titlefont=dict(
-            family='Times new roman',
-            size=fontsz
-        )
-    ),
-    margin=dict(
-        l=100,
-        r=100,
-        t=100,
-        b=100
-    ),
-    paper_bgcolor='rgb(248, 248, 255)',
-    plot_bgcolor='rgb(248, 248, 255)',
-)'''
-
-#fig_actual_pred = go.Figure(data=trace_tng_ntng_list, layout=layout_tng_ntng)
-#plotly.offline.plot(fig_actual_pred, filename="hyper_performance.html", auto_open=ao)
-#pio.write_image(fig_actual_pred, 'plots/hyper_performance.png', width=1200, height=800)'''
 
 # ----------------------------------
 
@@ -240,8 +179,6 @@ layout = dict(
         t=70,
         b=70,
     ),
-    #paper_bgcolor='rgb(248, 248, 255)',
-    #plot_bgcolor='rgb(248, 248, 255)',
 )
 
 fig_tp = go.Figure(data=[trace_tuning, trace_notuning], layout=layout)

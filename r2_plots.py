@@ -40,7 +40,7 @@ parameters = [{ \
     'regression__random_state': [3111696] \
 }]
 
-fontsz = 30
+fontsz = 44
 ao = False
 
 print('Training started...')
@@ -77,7 +77,15 @@ for d_set in datasets:
         x = y_test.tolist(),
         y = prediction.tolist(),
         mode = 'markers',
-        name = 'True vs predicted'
+        name = 'True vs predicted',
+        marker = dict(
+            size = 20,
+            color = 'rgba(152, 0, 0, .8)',
+            line = dict(
+                width = 2,
+                color = 'rgb(0, 0, 0)'
+            )
+        )
     )
   
     x_eq_y = list(range( int(min(y_test) - 1), int(max(y_test) + 1) ))
@@ -86,7 +94,11 @@ for d_set in datasets:
         x = x_eq_y,
         y = x_eq_y,
         mode = 'lines',
-        name = 'x = y curve'
+        name = 'x = y curve',
+        marker = dict(
+            size = 10,
+            color = 'rgba(52, 0, 0, .8)',
+        )
     )
 
     layout_actual_pred = dict(
@@ -119,13 +131,11 @@ for d_set in datasets:
             t=100,
             b=100
         ),
-        #paper_bgcolor='rgb(248, 248, 255)',
-        #plot_bgcolor='rgb(248, 248, 255)',
     )
     fn = "pred_actual_" +  d_set + ".png"
     fig_actual_pred = go.Figure(data=[trace_actual_pred, trace_x_eq_y], layout=layout_actual_pred)
-    plotly.offline.plot(fig_actual_pred, filename=fn, auto_open=ao)
-    pio.write_image(fig_actual_pred, 'plots/' + fn, width=1400, height=800)
+    #plotly.offline.plot(fig_actual_pred, filename=fn, auto_open=ao)
+    pio.write_image(fig_actual_pred, 'plots_r2/' + fn, width=1400, height=800)
     
     print("Finished dataset: %s" % d_set)
     print("------------------------------------------------------------")

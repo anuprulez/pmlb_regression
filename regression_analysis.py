@@ -16,7 +16,7 @@ import plotly.io as pio
 warnings.filterwarnings('ignore')
 
 start_time = time.time()
-folder_name = "tuning/"
+folder_name = "european_days/"
 clf_names_dir = os.listdir(folder_name)
 
 
@@ -62,7 +62,6 @@ for clf in clf_names_dir:
 
     print("-------------x------------------x---------------x---------------")
     print(" ")
-    
 
 fit_times_list = list()
 r2_score_list = list()
@@ -73,12 +72,9 @@ ctr = 0
 ao = False
 
 NUM_COLORS = 16
-cm = plt.get_cmap('tab20c')
+cm = plt.get_cmap('RdYlBu')
 colors = [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)]
-
-rcParams["font.size"] = 30
-rcParams["font.family"] = "Times New Roman"
-fontsz = 30
+fontsz = 26
 
 for item in r2_dict.items():
     names_clf.append(item[0])
@@ -93,6 +89,10 @@ for item in r2_dict.items():
         marker = dict(
             size = 15,
             color = 'rgba' + str(colors[ctr]),
+            line = dict(
+                width = 2,
+                color = 'rgb(0, 0, 0)'
+            )
         )
     )
     trace_time_acc_list.append(trace_time_acc)
@@ -128,16 +128,15 @@ layout_time_acc = dict(
         t=100,
         b=100
     ),
-    #paper_bgcolor='rgb(248, 248, 255)',
-    #plot_bgcolor='rgb(248, 248, 255)',
 )
 
 fig_tp = go.Figure(data=trace_time_acc_list, layout=layout_time_acc)
-plotly.offline.plot(fig_tp, filename="fit_time_r2.png", auto_open=ao)
+plotly.offline.plot(fig_tp, filename="fit_time_r2", auto_open=ao)
 pio.write_image(fig_tp, 'plots/fit_time_r2.png', width=1200, height=800)
 
 print("-------------x------------------x---------------")
 
+fontsz = 32
 # plot bar chart for regressors
 r2_dict = sorted(r2_dict.items(), key=lambda kv: kv[1])
 
@@ -154,7 +153,7 @@ trace0 = go.Bar(
     marker=dict(
         color='rgba(50, 171, 96, 0.6)',
         line=dict(
-            color='rgba(50, 171, 96, 0.6)',
+            color='rgba(0, 0, 0)',
             width=1),
         ),
     name='R2 regression scores vs regressors',
@@ -190,12 +189,10 @@ layout = dict(
         t=70,
         b=70,
     ),
-    #paper_bgcolor='rgb(248, 248, 255)',
-    #plot_bgcolor='rgb(248, 248, 255)',
 )
 
 fig_tp = go.Figure(data=[trace0], layout=layout)
-plotly.offline.plot(fig_tp, filename="r2_scores.png", auto_open=ao)
+#plotly.offline.plot(fig_tp, filename="r2_scores.png", auto_open=ao)
 pio.write_image(fig_tp, "plots/r2_scores.png", width=1300, height=800)
 print("-------------x------------------x---------------")
 
@@ -206,11 +203,17 @@ data_folder_name = "data_used/"
 folder_dir = os.listdir(data_folder_name)
 dataset_length = list()
 
+file_names = ""
 for ds in folder_dir:
     if ds + ".tabular" in common_fileset:
         ds_path = data_folder_name + ds
         df = pd.read_csv(ds_path, sep="\t")
         dataset_length.append(len(df))
+        file_names += ds + ".tabular" + "\n"
+
+file_object  = open("file_names.txt", "w")
+file_object.write(file_names)
+file_object.close()
 
 trace1 = go.Bar(
     x=np.arange(len(dataset_length)),
@@ -218,7 +221,7 @@ trace1 = go.Bar(
     marker=dict(
         color='rgba(50, 171, 96, 0.6)',
         line=dict(
-            color='rgba(50, 171, 96, 0.6)', width=1),
+            color='rgba(0, 0, 0)', width=1),
         ),
     name='Size of datasets',
 )
@@ -253,12 +256,10 @@ layout1 = dict(
         t=70,
         b=70,
     ),
-    #paper_bgcolor='rgb(248, 248, 255)',
-    #plot_bgcolor='rgb(248, 248, 255)',
 )
 
 fig_tp = go.Figure(data=[trace1], layout=layout1)
-plotly.offline.plot(fig_tp, filename="size_datasets.png", auto_open=ao)
+#plotly.offline.plot(fig_tp, filename="size_datasets.png", auto_open=ao)
 pio.write_image(fig_tp, "plots/size_datasets.png", width=1200, height=800)
 print("-------------x------------------x---------------")
 
