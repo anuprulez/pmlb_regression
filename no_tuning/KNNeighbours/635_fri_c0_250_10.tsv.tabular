@@ -1,0 +1,2 @@
+mean_fit_time	mean_score_time	mean_test_score	param_estimator__leaf_size	params	rank_test_score	split0_test_score	split1_test_score	split2_test_score	std_fit_time	std_score_time	std_test_score
+0.0005141099294026693	0.0010252793629964192	0.5608985320406605	30	{'estimator__leaf_size': 30}	1	0.6096399659038152	0.45697692634875686	0.6154914576782873	0.0001457600711558187	0.0001974499640650622	0.07330234307910055

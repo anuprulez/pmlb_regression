@@ -1,0 +1,2 @@
+mean_fit_time	mean_score_time	mean_test_score	param_estimator__fit_intercept	params	rank_test_score	split0_test_score	split1_test_score	split2_test_score	std_fit_time	std_score_time	std_test_score
+0.050889809926350914	0.00042398770650227863	0.12201272142235936	True	{'estimator__fit_intercept': True}	1	0.14947550673873322	0.0941417595992684	0.1224210474442804	0.015606752036970017	4.7484751026158304e-05	0.02259313073156763

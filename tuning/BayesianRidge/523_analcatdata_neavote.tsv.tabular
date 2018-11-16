@@ -1,0 +1,21 @@
+mean_fit_time	mean_score_time	mean_test_score	param_estimator__fit_intercept	param_preprocessing_1__k	params	rank_test_score	split0_test_score	split1_test_score	split2_test_score	std_fit_time	std_score_time	std_test_score
+0.003994146982828776	0.0005962848663330078	0.9205669959864413	True	1	{'estimator__fit_intercept': True, 'preprocessing_1__k': 1}	1	0.9103925648596736	0.9734313157499437	0.8781854234444572	0.002397271811964854	9.205942048703197e-05	0.03937221983821337
+0.0025486151377360025	0.0006160736083984375	0.9175286750064581	True	2	{'estimator__fit_intercept': True, 'preprocessing_1__k': 2}	2	0.9039009484990945	0.9731668017319657	0.875931236197628	0.0001492108390737199	3.903420160266727e-05	0.04069036662701592
+0.0003707408905029297	0.0	0.0	True	3	{'estimator__fit_intercept': True, 'preprocessing_1__k': 3}	4	0.0	0.0	0.0	2.0621024918548976e-05	0.0	0.0
+0.00045609474182128906	0.0	0.0	True	4	{'estimator__fit_intercept': True, 'preprocessing_1__k': 4}	4	0.0	0.0	0.0	7.952847124507826e-06	0.0	0.0
+0.0004456837972005208	0.0	0.0	True	5	{'estimator__fit_intercept': True, 'preprocessing_1__k': 5}	4	0.0	0.0	0.0	2.1219104713937186e-05	0.0	0.0
+0.0004440148671468099	0.0	0.0	True	6	{'estimator__fit_intercept': True, 'preprocessing_1__k': 6}	4	0.0	0.0	0.0	3.4857162280001254e-05	0.0	0.0
+0.0003826618194580078	0.0	0.0	True	7	{'estimator__fit_intercept': True, 'preprocessing_1__k': 7}	4	0.0	0.0	0.0	3.054922668181219e-05	0.0	0.0
+0.002284526824951172	0.0	0.0	True	8	{'estimator__fit_intercept': True, 'preprocessing_1__k': 8}	4	0.0	0.0	0.0	0.0024072364020193853	0.0	0.0
+0.0004543463389078776	0.0	0.0	True	9	{'estimator__fit_intercept': True, 'preprocessing_1__k': 9}	4	0.0	0.0	0.0	7.470034526943976e-05	0.0	0.0
+0.0004642009735107422	0.0	0.0	True	10	{'estimator__fit_intercept': True, 'preprocessing_1__k': 10}	4	0.0	0.0	0.0	4.9966755379996505e-05	0.0	0.0
+0.0027619202931722007	0.0006256103515625	-2.1157666083638564	False	1	{'estimator__fit_intercept': False, 'preprocessing_1__k': 1}	20	-2.9104962906332372	-2.4763121259971372	-0.9364086908166687	0.00017638144963229857	4.985324317479076e-05	0.8465413082113622
+0.0025940736134847007	0.0006522337595621744	0.9146223846213986	False	2	{'estimator__fit_intercept': False, 'preprocessing_1__k': 2}	3	0.9096990062981417	0.969210613133952	0.8651067277146247	0.00031176608277115305	4.741327098361301e-05	0.04243458757717106
+0.0004458427429199219	0.0	0.0	False	3	{'estimator__fit_intercept': False, 'preprocessing_1__k': 3}	4	0.0	0.0	0.0	2.765107374570546e-05	0.0	0.0
+0.00035826365152994793	0.0	0.0	False	4	{'estimator__fit_intercept': False, 'preprocessing_1__k': 4}	4	0.0	0.0	0.0	1.233392154760116e-05	0.0	0.0
+0.0004431406656901042	0.0	0.0	False	5	{'estimator__fit_intercept': False, 'preprocessing_1__k': 5}	4	0.0	0.0	0.0	2.7069580650598324e-05	0.0	0.0
+0.0004622141520182292	0.0	0.0	False	6	{'estimator__fit_intercept': False, 'preprocessing_1__k': 6}	4	0.0	0.0	0.0	2.2029612944667524e-05	0.0	0.0
+0.00027306874593098957	0.0	0.0	False	7	{'estimator__fit_intercept': False, 'preprocessing_1__k': 7}	4	0.0	0.0	0.0	1.8582719220931573e-05	0.0	0.0
+0.0002906322479248047	0.0	0.0	False	8	{'estimator__fit_intercept': False, 'preprocessing_1__k': 8}	4	0.0	0.0	0.0	7.58665751182296e-05	0.0	0.0
+0.00043010711669921875	0.0	0.0	False	9	{'estimator__fit_intercept': False, 'preprocessing_1__k': 9}	4	0.0	0.0	0.0	9.560555293924056e-06	0.0	0.0
+0.00047524770100911457	0.0	0.0	False	10	{'estimator__fit_intercept': False, 'preprocessing_1__k': 10}	4	0.0	0.0	0.0	2.6918667127030354e-05	0.0	0.0
