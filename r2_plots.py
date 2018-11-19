@@ -80,7 +80,7 @@ for d_set in datasets:
         name = 'True vs predicted',
         marker = dict(
             size = 20,
-            color = 'rgba(152, 0, 0, .8)',
+            color = 'rgba(50, 171, 96, 0.6)', #'rgba(152, 0, 0, .8)',
             line = dict(
                 width = 2,
                 color = 'rgb(0, 0, 0)'
