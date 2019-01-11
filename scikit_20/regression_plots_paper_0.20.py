@@ -150,6 +150,7 @@ plt.yticks(fontsize=size_yticks)
 plt.xlabel('Losses', fontsize=size_xlabel)
 plt.ylabel('Wins', fontsize=size_ylabel)
 plt.title('(A) % out of '+ str(n_datasets) +' datasets where regressor A outperformed regressor B', fontsize=size_title)
+
 # --------------------
 
 r2_clf_matrix = np.zeros(shape=(n_clf, n_datasets), dtype=float)
@@ -222,36 +223,6 @@ mean_perf_datasets = np.mean(clf_datasets_perf, axis=0)
 
 c_fname = [(a,b) for (a,b) in zip(opt_fnames, mean_perf_datasets) if b < 0.0]
 
-
-# plot hyperparameter tuninig improvement per regressor
-hyper_improvement = dict()
-
-for clf in clf_names_no_tuning:
-    mean_no_tuning = np.mean(r2_dict_no_tuning[clf])
-    mean_tuning = np.mean(r2_dict_tuning[clf])
-    diff = (mean_tuning - mean_no_tuning)
-    hyper_improvement[clf] = np.round(diff, 2)
-
-hyper_improvement = sorted(hyper_improvement.items(), key=lambda kv: kv[1], reverse=True)
-
-y_labels = list()
-improvement = list()
-for k,v in hyper_improvement:
-    y_labels.append(k)
-    improvement.append(v) 
-
-
-ax = plt.subplot(gs[1, :])
-plt.yticks(range(len(y_labels)), y_labels, size=size_yticks)
-y_pos = np.arange(len(y_labels))
-plt.barh(y_pos, improvement, color='steelblue')
-plt.xlabel('R2 score improvement', size=size_xlabel)
-plt.ylabel('Regressors', size=size_ylabel)
-plt.title('(C) R2 score improvement due to hyperparameter optimisation', size=size_title)
-plt.xticks(size=size_xticks)
-plt.yticks(size=size_yticks)
-plt.grid(True)
-
 # ------------------
 
 NUM_COLORS = len(clf_names)
@@ -269,18 +240,58 @@ for item in r2_dict.items():
     ax.scatter(fit_time_dict[item[0]], np.mean(item[1]), c=colors[ctr], label=item[0])
     ctr += 1
 
-plt.grid(True)
 plt.title("(B) Fit time vs R2 regression score", size=size_title)
 plt.xlabel("Mean fit time (in seconds)", size=size_xlabel)
 plt.ylabel("Mean R2 score", size=size_ylabel)
 plt.xticks(size=size_xticks)
 plt.yticks(size=size_yticks)
 ax.legend(bbox_to_anchor=(1.0, 1.00), shadow=True, ncol=1, prop={'size': size_yticks})
+plt.grid(True)
+
+# -----------------
+
+ax = plt.subplot(gs[1, 0])
+r2_clf_matrix = np.zeros(shape=(n_clf, n_datasets), dtype=float)
+
+for x, clf in enumerate(clf_sorted):
+    r2_clf_matrix[x] = r2_dict[clf]
+
+plt.title('(C) R2 scores of datasets across regressors', size=size_title)
+plt.xlabel('Number of datasets', size=size_xlabel)
+plt.yticks(range(n_clf), y_labels, size=size_yticks)
+plt.xticks(size=size_xticks)
+plt.imshow(r2_clf_matrix, cmap='Blues', aspect=4.5)
+cbar = plt.colorbar(shrink=0.7)
+ticklabs = cbar.ax.get_yticklabels()
+cbar.ax.set_yticklabels(ticklabs, fontsize=size_yticks)
+
+# ----------------
+
+hyper_improvement = dict()
+
+for clf in clf_names_no_tuning:
+    mean_no_tuning = np.mean(r2_dict_no_tuning[clf])
+    mean_tuning = np.mean(r2_dict_tuning[clf])
+    diff = (mean_tuning - mean_no_tuning)
+    hyper_improvement[clf] = np.round(diff, 2)
+
+hyper_improvement = sorted(hyper_improvement.items(), key=lambda kv: kv[1], reverse=True)
+
+y_labels = list()
+improvement = list()
+for k,v in hyper_improvement:
+    y_labels.append(k)
+    improvement.append(v) 
+
+ax = plt.subplot(gs[1, 1])
+plt.yticks(range(len(y_labels)), y_labels, size=size_yticks)
+y_pos = np.arange(len(y_labels))
+plt.barh(y_pos, improvement, color='steelblue')
+plt.xlabel('R2 score improvement', size=size_xlabel)
+plt.ylabel('Regressors', size=size_ylabel)
+plt.title('(D) R2 score improvement due to hyperparameter optimisation', size=size_title)
+plt.xticks(size=size_xticks)
+plt.yticks(size=size_yticks)
+plt.grid(True)
 
 plt.show()
-plt.savefig("regression_paper_plot.png")
-
-
-
-
-
