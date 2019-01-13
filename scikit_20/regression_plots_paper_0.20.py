@@ -14,6 +14,7 @@ import plotly.graph_objs as go
 from plotly import tools
 import plotly.io as pio
 import matplotlib.gridspec as gridspec
+import seaborn as sns
 
 
 
@@ -267,31 +268,42 @@ cbar.ax.set_yticklabels(ticklabs, fontsize=size_yticks)
 
 # ----------------
 
-hyper_improvement = dict()
+#hyper_improvement = dict()
 
-for clf in clf_names_no_tuning:
-    mean_no_tuning = np.mean(r2_dict_no_tuning[clf])
-    mean_tuning = np.mean(r2_dict_tuning[clf])
-    diff = (mean_tuning - mean_no_tuning)
-    hyper_improvement[clf] = np.round(diff, 2)
-
-hyper_improvement = sorted(hyper_improvement.items(), key=lambda kv: kv[1], reverse=True)
-
+hyper_improvement_datasets = np.zeros([len(clf_names_no_tuning), n_datasets])
 y_labels = list()
+for clf_idx, clf in enumerate(clf_names_no_tuning):
+    #mean_no_tuning = np.mean(r2_dict_no_tuning[clf])
+    #mean_tuning = np.mean(r2_dict_tuning[clf])
+    if clf not in [""]:
+        diff = [(x - y) for x, y in zip(r2_dict_tuning[clf], r2_dict_no_tuning[clf])]
+        #hyper_improvement[clf] = np.round(diff, 2)
+        hyper_improvement_datasets[clf_idx] = diff
+        y_labels.append(clf)
+
+#hyper_improvement = sorted(hyper_improvement.items(), key=lambda kv: kv[1], reverse=True)
+
+'''y_labels = list()
 improvement = list()
 for k,v in hyper_improvement:
     y_labels.append(k)
-    improvement.append(v) 
+    #improvement.append(v)'''
 
 ax = plt.subplot(gs[1, 1])
-plt.yticks(range(len(y_labels)), y_labels, size=size_yticks)
+df = pd.DataFrame(data=hyper_improvement_datasets.T, columns=y_labels)
+sns.boxplot(data=df, orient='h', notch=True, palette=[sb.color_palette('Blues', n_colors=2)[1]])
+
+'''plt.yticks(range(len(y_labels)), y_labels, size=size_yticks)
 y_pos = np.arange(len(y_labels))
-plt.barh(y_pos, improvement, color='steelblue')
+plt.barh(y_pos, improvement, color='steelblue')'''
+
 plt.xlabel('R2 score improvement', size=size_xlabel)
-plt.ylabel('Regressors', size=size_ylabel)
 plt.title('(D) R2 score improvement due to hyperparameter optimisation', size=size_title)
 plt.xticks(size=size_xticks)
 plt.yticks(size=size_yticks)
+plt.xlim(0., 0.5)
 plt.grid(True)
+
+
 
 plt.show()
