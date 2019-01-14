@@ -108,7 +108,10 @@ model_nice_dict_y = {
 x_labels = list(model_nice_dict.values())
 y_labels = list(model_nice_dict_y.values())
 
-# plot heatmap
+# ---------------
+# Plot heatmap
+# ---------------
+
 performance_datasets = np.zeros(shape=(n_clf, n_clf), dtype=float)
 
 for x, clf_x in enumerate(clf_sorted):
@@ -153,6 +156,8 @@ plt.ylabel('Wins', fontsize=size_ylabel)
 plt.title('(A) % out of '+ str(n_datasets) +' datasets where regressor A outperformed regressor B', fontsize=size_title)
 
 # --------------------
+# Plot fit time vs r2 score for regressors
+# ------------------
 
 r2_clf_matrix = np.zeros(shape=(n_clf, n_datasets), dtype=float)
 
@@ -224,8 +229,6 @@ mean_perf_datasets = np.mean(clf_datasets_perf, axis=0)
 
 c_fname = [(a,b) for (a,b) in zip(opt_fnames, mean_perf_datasets) if b < 0.0]
 
-# ------------------
-
 NUM_COLORS = len(clf_names)
 cm = plt.get_cmap('tab20')
 colors = [cm(1.*i/NUM_COLORS) for i in range(NUM_COLORS)]
@@ -250,6 +253,26 @@ ax.legend(bbox_to_anchor=(1.0, 1.00), shadow=True, ncol=1, prop={'size': size_yt
 plt.grid(True)
 
 # -----------------
+# R2 scores for datasets across regressors
+# ---------------
+
+
+regressors_list = {
+    'XGBoost': 'XGBoost',
+    'ExtraTrees': 'ExtraTrees',
+    'GradientBoosting': 'GradientBoosting',
+    'RandomForest': 'RandomForest',
+    'Bagging': 'Bagging',
+    'KNNeighbours': 'KNNeighbours',
+    'AdaBoost': 'AdaBoost',
+    'ExtraTree': 'ExtraTree',
+    'DecisionTree': 'DecisionTree',
+    'LinearSVR': 'Linear SVR',
+    'BayesianRidge': 'BayesianRidge',
+    'LinearRegression': 'LinearRegression',
+    'ElasticNet': 'ElasticNet',
+    'Huber': 'Huber'
+}
 
 ax = plt.subplot(gs[1, 0])
 r2_clf_matrix = np.zeros(shape=(n_clf, n_datasets), dtype=float)
@@ -259,51 +282,33 @@ for x, clf in enumerate(clf_sorted):
 
 plt.title('(C) R2 scores of datasets across regressors', size=size_title)
 plt.xlabel('Number of datasets', size=size_xlabel)
-plt.yticks(range(n_clf), y_labels, size=size_yticks)
+plt.yticks(range(n_clf), list(regressors_list.values()), size=size_yticks)
 plt.xticks(size=size_xticks)
-plt.imshow(r2_clf_matrix, cmap='Blues', aspect=4.5)
-cbar = plt.colorbar(shrink=0.7)
+plt.imshow(r2_clf_matrix, cmap='Blues', aspect=5.5)
+cbar = plt.colorbar(shrink=0.8)
 ticklabs = cbar.ax.get_yticklabels()
 cbar.ax.set_yticklabels(ticklabs, fontsize=size_yticks)
 
-# ----------------
-
-#hyper_improvement = dict()
+# ---------------
+# Box-plots for hyperparameter tuning improvements
+# ---------------
 
 hyper_improvement_datasets = np.zeros([len(clf_names_no_tuning), n_datasets])
 y_labels = list()
 for clf_idx, clf in enumerate(clf_names_no_tuning):
-    #mean_no_tuning = np.mean(r2_dict_no_tuning[clf])
-    #mean_tuning = np.mean(r2_dict_tuning[clf])
     if clf not in [""]:
         diff = [(x - y) for x, y in zip(r2_dict_tuning[clf], r2_dict_no_tuning[clf])]
-        #hyper_improvement[clf] = np.round(diff, 2)
         hyper_improvement_datasets[clf_idx] = diff
         y_labels.append(clf)
-
-#hyper_improvement = sorted(hyper_improvement.items(), key=lambda kv: kv[1], reverse=True)
-
-'''y_labels = list()
-improvement = list()
-for k,v in hyper_improvement:
-    y_labels.append(k)
-    #improvement.append(v)'''
 
 ax = plt.subplot(gs[1, 1])
 df = pd.DataFrame(data=hyper_improvement_datasets.T, columns=y_labels)
 sns.boxplot(data=df, orient='h', notch=True, palette=[sb.color_palette('Blues', n_colors=2)[1]])
-
-'''plt.yticks(range(len(y_labels)), y_labels, size=size_yticks)
-y_pos = np.arange(len(y_labels))
-plt.barh(y_pos, improvement, color='steelblue')'''
-
 plt.xlabel('R2 score improvement', size=size_xlabel)
 plt.title('(D) R2 score improvement due to hyperparameter optimisation', size=size_title)
 plt.xticks(size=size_xticks)
 plt.yticks(size=size_yticks)
 plt.xlim(0., 0.5)
 plt.grid(True)
-
-
 
 plt.show()
