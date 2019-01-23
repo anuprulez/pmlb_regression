@@ -1,0 +1,2 @@
+mean_fit_time	std_fit_time	mean_score_time	std_score_time	param_estimator__random_state	params	split0_test_score	split1_test_score	split2_test_score	split3_test_score	split4_test_score	mean_test_score	std_test_score	rank_test_score
+0.020389556884765625	0.00027353995389611964	0.0012583732604980469	5.528700146585996e-05	3111696	{'estimator__random_state': 3111696}	0.7581952454505159	0.5613643554094676	0.6142429151611339	0.7499023983792521	0.5642797787762237	0.6495969386353186	0.08737126642382134	1

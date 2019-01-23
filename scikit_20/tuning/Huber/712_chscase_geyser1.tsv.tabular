@@ -1,0 +1,141 @@
+mean_fit_time	std_fit_time	mean_score_time	std_score_time	param_estimator__epsilon	param_estimator__fit_intercept	param_preprocessing_1__k	params	split0_test_score	split1_test_score	split2_test_score	split3_test_score	split4_test_score	mean_test_score	std_test_score	rank_test_score
+0.01501765251159668	0.0024346103677783722	0.0006311893463134766	5.383354249459466e-05	1.0	True	1	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': True, 'preprocessing_1__k': 1}	0.7514232002783745	0.6826329135402148	0.7983401018122742	0.7719736489784413	0.7966717126008959	0.7598193041039073	0.04259681202987913	1
+0.018499422073364257	0.0033451637518076087	0.0006188392639160156	1.496737075999652e-05	1.0	True	2	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': True, 'preprocessing_1__k': 2}	0.7466276709043896	0.6926444194399062	0.7712200791047061	0.7772971305654288	0.8025261274833879	0.7577168959470645	0.037327430017617694	4
+0.00031604766845703123	2.1621607690729472e-05	0.0	0.0	1.0	True	3	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': True, 'preprocessing_1__k': 3}								106
+0.00030193328857421877	9.326525252073403e-06	0.0	0.0	1.0	True	4	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': True, 'preprocessing_1__k': 4}								105
+0.00030364990234375	1.0333843448043344e-05	0.0	0.0	1.0	True	5	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': True, 'preprocessing_1__k': 5}								104
+0.00034584999084472654	7.181104277272045e-05	0.0	0.0	1.0	True	6	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': True, 'preprocessing_1__k': 6}								103
+0.0003013134002685547	7.632969972138876e-06	0.0	0.0	1.0	True	7	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': True, 'preprocessing_1__k': 7}								102
+0.0003151893615722656	1.3212778209192553e-05	0.0	0.0	1.0	True	8	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': True, 'preprocessing_1__k': 8}								101
+0.0003005027770996094	1.1543596330011744e-05	0.0	0.0	1.0	True	9	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': True, 'preprocessing_1__k': 9}								100
+0.00030055046081542967	8.794511324614337e-06	0.0	0.0	1.0	True	10	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': True, 'preprocessing_1__k': 10}								99
+0.009067106246948241	0.003666357620490742	0.0005968093872070312	4.26859553070902e-05	1.0	False	1	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': False, 'preprocessing_1__k': 1}	0.26183757161568055	0.1718863251474525	0.0821084196350047	0.2671637348626774	-0.1640238945254482	0.12463287744648326	0.15864345313813585	22
+0.014046716690063476	0.0023876457352658793	0.0006198406219482422	2.0064818082574393e-05	1.0	False	2	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': False, 'preprocessing_1__k': 2}	0.3118450432350526	0.1852412965414979	0.14885920179700862	0.243891928289366	-0.12106357505654519	0.1546087284290868	0.14781840384232312	21
+0.00031948089599609375	2.5913368667282477e-05	0.0	0.0	1.0	False	3	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': False, 'preprocessing_1__k': 3}								98
+0.000301361083984375	7.725644944200348e-06	0.0	0.0	1.0	False	4	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': False, 'preprocessing_1__k': 4}								97
+0.0002999305725097656	8.268691807400968e-06	0.0	0.0	1.0	False	5	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': False, 'preprocessing_1__k': 5}								96
+0.00032887458801269533	4.638637955127475e-05	0.0	0.0	1.0	False	6	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': False, 'preprocessing_1__k': 6}								95
+0.0003060817718505859	9.561030931609677e-06	0.0	0.0	1.0	False	7	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': False, 'preprocessing_1__k': 7}								94
+0.00030493736267089844	8.432066669037827e-06	0.0	0.0	1.0	False	8	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': False, 'preprocessing_1__k': 8}								93
+0.0003070354461669922	9.193687514227742e-06	0.0	0.0	1.0	False	9	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': False, 'preprocessing_1__k': 9}								92
+0.00030388832092285154	7.944170023106473e-06	0.0	0.0	1.0	False	10	{'estimator__epsilon': 1.0, 'estimator__fit_intercept': False, 'preprocessing_1__k': 10}								91
+0.005269432067871093	0.00020584351534264496	0.000552511215209961	2.554690398160285e-05	1.2	True	1	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': True, 'preprocessing_1__k': 1}	0.7440388368411537	0.6771444699720837	0.7950526657391885	0.7691063588378269	0.7931739579255986	0.7552968470122103	0.04357937261354006	11
+0.007911252975463866	0.0007088145686742448	0.0005420207977294922	2.9801216104955292e-05	1.2	True	2	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': True, 'preprocessing_1__k': 2}	0.7480359891384795	0.6948093180117108	0.7538920053586917	0.779652301973065	0.8064242903493579	0.7562462032420162	0.03724882666291086	8
+0.0003164768218994141	2.4411361515125474e-05	0.0	0.0	1.2	True	3	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': True, 'preprocessing_1__k': 3}								90
+0.0003027915954589844	1.2340781491132432e-05	0.0	0.0	1.2	True	4	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': True, 'preprocessing_1__k': 4}								89
+0.00030641555786132814	7.70855604768716e-06	0.0	0.0	1.2	True	5	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': True, 'preprocessing_1__k': 5}								88
+0.000299835205078125	5.860637116598727e-06	0.0	0.0	1.2	True	6	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': True, 'preprocessing_1__k': 6}								87
+0.00030202865600585936	6.909039688882395e-06	0.0	0.0	1.2	True	7	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': True, 'preprocessing_1__k': 7}								86
+0.00031065940856933594	5.686170648866212e-06	0.0	0.0	1.2	True	8	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': True, 'preprocessing_1__k': 8}								85
+0.0003041744232177734	6.230712747766297e-06	0.0	0.0	1.2	True	9	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': True, 'preprocessing_1__k': 9}								84
+0.00030155181884765624	8.036368506539234e-06	0.0	0.0	1.2	True	10	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': True, 'preprocessing_1__k': 10}								83
+0.004009675979614258	0.00013973162729235826	0.0005381107330322266	3.544539435567227e-05	1.2	False	1	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': False, 'preprocessing_1__k': 1}	0.26015478142690573	0.16505205240970422	0.056725115200212284	0.26258360445050477	-0.16147374031451012	0.1174731829434259	0.15783680348270887	28
+0.006209087371826172	0.0014374400782082755	0.0006092071533203125	0.00013663106247297925	1.2	False	2	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': False, 'preprocessing_1__k': 2}	0.31559786341957674	0.18384406854111912	0.15391348993209675	0.24582437264966006	-0.11400404835714939	0.15787015659510828	0.14617073733749825	20
+0.0003149986267089844	1.898111386844352e-05	0.0	0.0	1.2	False	3	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': False, 'preprocessing_1__k': 3}								82
+0.00030303001403808594	8.363022334439756e-06	0.0	0.0	1.2	False	4	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': False, 'preprocessing_1__k': 4}								81
+0.00038976669311523436	0.00016069690973597987	0.0	0.0	1.2	False	5	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': False, 'preprocessing_1__k': 5}								80
+0.0003662586212158203	0.00012114229831558496	0.0	0.0	1.2	False	6	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': False, 'preprocessing_1__k': 6}								107
+0.00030269622802734373	8.292854868774683e-06	0.0	0.0	1.2	False	7	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': False, 'preprocessing_1__k': 7}								108
+0.00030584335327148436	6.640545957634841e-06	0.0	0.0	1.2	False	8	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': False, 'preprocessing_1__k': 8}								109
+0.0003033161163330078	9.11420312404932e-06	0.0	0.0	1.2	False	9	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': False, 'preprocessing_1__k': 9}								110
+0.0003044605255126953	9.594977914876337e-06	0.0	0.0	1.2	False	10	{'estimator__epsilon': 1.2, 'estimator__fit_intercept': False, 'preprocessing_1__k': 10}								138
+0.005963325500488281	0.0006931158198345002	0.0005533218383789063	3.0069640049634356e-05	1.35	True	1	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': True, 'preprocessing_1__k': 1}	0.7453042507591467	0.6785440106942702	0.7932449560151243	0.7680013907223027	0.7937026804812499	0.7553645448784935	0.042709579399683416	10
+0.008465766906738281	0.001474840818991677	0.0005709171295166015	3.326519365192549e-05	1.35	True	2	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': True, 'preprocessing_1__k': 2}	0.7490327100587701	0.6938018972667088	0.7496596305761194	0.7777140717618624	0.8054473406852515	0.7548274019039135	0.03713033798899369	14
+0.0006134986877441406	0.00038342601311949017	0.0	0.0	1.35	True	3	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': True, 'preprocessing_1__k': 3}								137
+0.0003041267395019531	8.175497882899395e-06	0.0	0.0	1.35	True	4	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': True, 'preprocessing_1__k': 4}								136
+0.0002965450286865234	8.08291728906453e-06	0.0	0.0	1.35	True	5	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': True, 'preprocessing_1__k': 5}								135
+0.00035014152526855467	7.077869839594068e-05	0.0	0.0	1.35	True	6	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': True, 'preprocessing_1__k': 6}								134
+0.00030364990234375	9.751990232300595e-06	0.0	0.0	1.35	True	7	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': True, 'preprocessing_1__k': 7}								133
+0.00030012130737304686	8.459526618493663e-06	0.0	0.0	1.35	True	8	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': True, 'preprocessing_1__k': 8}								132
+0.00030436515808105467	5.562055580521122e-06	0.0	0.0	1.35	True	9	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': True, 'preprocessing_1__k': 9}								131
+0.0003050327301025391	9.771788410477363e-06	0.0	0.0	1.35	True	10	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': True, 'preprocessing_1__k': 10}								130
+0.004074287414550781	0.00013737441017510214	0.0005223751068115234	2.084929237917611e-05	1.35	False	1	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': False, 'preprocessing_1__k': 1}	0.2718696768032751	0.18389027964281146	0.03038060328357095	0.27191501415322683	-0.15952541857765068	0.12068057112556925	0.1647853017146259	27
+0.005830001831054687	0.0002747901874228766	0.0005458831787109375	7.36802135914562e-06	1.35	False	2	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': False, 'preprocessing_1__k': 2}	0.32365231849441	0.19802849597743244	0.1360331102622182	0.24827026265611585	-0.11152578283497361	0.1598101379049584	0.14829852457544004	18
+0.00031361579895019533	1.5575577573589716e-05	0.0	0.0	1.35	False	3	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': False, 'preprocessing_1__k': 3}								129
+0.0003032684326171875	7.793042327030393e-06	0.0	0.0	1.35	False	4	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': False, 'preprocessing_1__k': 4}								128
+0.0003021240234375	8.151544817488899e-06	0.0	0.0	1.35	False	5	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': False, 'preprocessing_1__k': 5}								127
+0.00030188560485839845	9.625026250488383e-06	0.0	0.0	1.35	False	6	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': False, 'preprocessing_1__k': 6}								126
+0.00029864311218261717	8.217109385886389e-06	0.0	0.0	1.35	False	7	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': False, 'preprocessing_1__k': 7}								139
+0.00030493736267089844	6.494445072115057e-06	0.0	0.0	1.35	False	8	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': False, 'preprocessing_1__k': 8}								125
+0.00031185150146484375	7.713863549706712e-06	0.0	0.0	1.35	False	9	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': False, 'preprocessing_1__k': 9}								123
+0.0003043174743652344	6.013822147021018e-06	0.0	0.0	1.35	False	10	{'estimator__epsilon': 1.35, 'estimator__fit_intercept': False, 'preprocessing_1__k': 10}								122
+0.005401754379272461	0.00018135406659939673	0.0005401611328125	1.911908897053064e-05	1.5	True	1	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 1}	0.7470056956117563	0.6807153322717827	0.7900991674653004	0.7674881045383487	0.7928138483958417	0.7552481781636795	0.041108764997808765	12
+0.007779169082641602	0.0007807080704293932	0.0005671024322509765	1.1546550494970068e-05	1.5	True	2	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 2}	0.7500294355342008	0.6956126489274732	0.7497640928104295	0.776206064235569	0.8046233899609024	0.7549549994102657	0.0360906022656509	13
+0.0003117561340332031	1.2226573381651432e-05	0.0	0.0	1.5	True	3	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 3}								121
+0.0002994060516357422	8.383930941182707e-06	0.0	0.0	1.5	True	4	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 4}								120
+0.00030789375305175783	9.835568308647829e-06	0.0	0.0	1.5	True	5	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 5}								119
+0.0003066062927246094	9.795493404471463e-06	0.0	0.0	1.5	True	6	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 6}								118
+0.0002998828887939453	7.512871700756504e-06	0.0	0.0	1.5	True	7	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 7}								117
+0.0003025531768798828	9.584308262940302e-06	0.0	0.0	1.5	True	8	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 8}								116
+0.0003098964691162109	2.0930055376323032e-05	0.0	0.0	1.5	True	9	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 9}								115
+0.0002978801727294922	7.25607664551821e-06	0.0	0.0	1.5	True	10	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 10}								78
+0.004056692123413086	0.00024183848454158863	0.0005307197570800781	1.0647465171391523e-05	1.5	False	1	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 1}	0.28016874347129184	0.1984447839884943	0.010191951705576408	0.28065761356338714	-0.15828712802266165	0.12328989177715163	0.17114723344359858	26
+0.005526876449584961	0.00047796365711209594	0.0005453586578369141	2.2639774327600094e-05	1.5	False	2	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 2}	0.32893056278923094	0.20823886601439345	0.11411689190825403	0.2521649460273536	-0.110934721486033	0.15949503342317287	0.15134648491427097	19
+0.00030655860900878905	1.1811132241721816e-05	0.0	0.0	1.5	False	3	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 3}								113
+0.00033545494079589844	4.54983614068173e-05	0.0	0.0	1.5	False	4	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 4}								112
+0.0003066539764404297	1.4563765289253483e-05	0.0	0.0	1.5	False	5	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 5}								111
+0.0003001689910888672	5.2038644049676135e-06	0.0	0.0	1.5	False	6	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 6}								79
+0.0002902507781982422	7.307597513177465e-06	0.0	0.0	1.5	False	7	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 7}								124
+0.0003047943115234375	1.654329465928721e-05	0.0	0.0	1.5	False	8	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 8}								77
+0.0002978801727294922	6.43747823967456e-06	0.0	0.0	1.5	False	9	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 9}								72
+0.00029244422912597654	7.124847140778249e-06	0.0	0.0	1.5	False	10	{'estimator__epsilon': 1.5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 10}								45
+0.0050446510314941405	0.00025177107615682653	0.0005121231079101562	1.0376002858633491e-05	1.75	True	1	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': True, 'preprocessing_1__k': 1}	0.7484102003775372	0.6845520741082476	0.7858343495067436	0.7679218599068136	0.793121103015851	0.7556121806250193	0.039038195237810124	9
+0.007769727706909179	0.0003388810462305249	0.0005232810974121094	1.01829018923454e-05	1.75	True	2	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': True, 'preprocessing_1__k': 2}	0.7516816448915401	0.7004293139864928	0.7492672584346696	0.7763043550545541	0.8057507998144565	0.756410717724655	0.034797145413021584	7
+0.0003061771392822266	1.4183320683522783e-05	0.0	0.0	1.75	True	3	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': True, 'preprocessing_1__k': 3}								31
+0.0002947330474853516	8.752787339119042e-06	0.0	0.0	1.75	True	4	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': True, 'preprocessing_1__k': 4}								32
+0.00029072761535644533	7.108872843426921e-06	0.0	0.0	1.75	True	5	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': True, 'preprocessing_1__k': 5}								34
+0.0002917766571044922	7.880662771021508e-06	0.0	0.0	1.75	True	6	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': True, 'preprocessing_1__k': 6}								36
+0.0002938747406005859	8.40316420437267e-06	0.0	0.0	1.75	True	7	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': True, 'preprocessing_1__k': 7}								37
+0.0002987384796142578	9.713911432010346e-06	0.0	0.0	1.75	True	8	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': True, 'preprocessing_1__k': 8}								40
+0.0002928256988525391	6.9549605113036544e-06	0.0	0.0	1.75	True	9	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': True, 'preprocessing_1__k': 9}								29
+0.0002960681915283203	9.530065105708599e-06	0.0	0.0	1.75	True	10	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': True, 'preprocessing_1__k': 10}								44
+0.0036917686462402343	8.486316332154535e-05	0.0004978179931640625	7.62939453125e-06	1.75	False	1	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': False, 'preprocessing_1__k': 1}	0.2852894015780407	0.20638341800269444	-0.005176705569352125	0.28582374954261913	-0.15806350042452544	0.12395924683458427	0.1758265698172457	25
+0.005949211120605469	0.0006485639286729484	0.0005580425262451172	4.228704190344632e-05	1.75	False	2	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': False, 'preprocessing_1__k': 2}	0.33342525072639106	0.21955492684231204	0.09608636330752596	0.25655621109712246	-0.11060006018678425	0.16006296673953901	0.15487377332301025	15
+0.0003032684326171875	1.2466350996400234e-05	0.0	0.0	1.75	False	3	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': False, 'preprocessing_1__k': 3}								43
+0.0003016471862792969	1.0266294049702444e-05	0.0	0.0	1.75	False	4	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': False, 'preprocessing_1__k': 4}								42
+0.00031962394714355467	3.693613992348772e-05	0.0	0.0	1.75	False	5	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': False, 'preprocessing_1__k': 5}								41
+0.0002995014190673828	1.632803507480944e-05	0.0	0.0	1.75	False	6	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': False, 'preprocessing_1__k': 6}								39
+0.0002947807312011719	8.363837934038702e-06	0.0	0.0	1.75	False	7	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': False, 'preprocessing_1__k': 7}								38
+0.00029430389404296877	8.222641675872753e-06	0.0	0.0	1.75	False	8	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': False, 'preprocessing_1__k': 8}								35
+0.00035600662231445314	3.270053139000946e-05	0.0	0.0	1.75	False	9	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': False, 'preprocessing_1__k': 9}								33
+0.0003253936767578125	1.9146897186336508e-05	0.0	0.0	1.75	False	10	{'estimator__epsilon': 1.75, 'estimator__fit_intercept': False, 'preprocessing_1__k': 10}								30
+0.005564212799072266	0.00026195668923824947	0.0005738735198974609	1.7060511186212486e-05	5	True	1	{'estimator__epsilon': 5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 1}	0.7528144927271663	0.6893302525065843	0.7825705064482333	0.7678089737042605	0.7927169778475632	0.7567241337275734	0.03656884392508442	5
+0.007045221328735351	0.0005622338868308515	0.0005270004272460938	8.708775067760361e-06	5	True	2	{'estimator__epsilon': 5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 2}	0.7542395740882956	0.7066928077337276	0.7491985819746063	0.776603829758681	0.8064333309014845	0.7583798642248694	0.0329424272915561	3
+0.0003047943115234375	1.2857461042824758e-05	0.0	0.0	5	True	3	{'estimator__epsilon': 5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 3}								61
+0.00029554367065429685	7.017124992045271e-06	0.0	0.0	5	True	4	{'estimator__epsilon': 5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 4}								47
+0.00029687881469726564	1.0755188684769314e-05	0.0	0.0	5	True	5	{'estimator__epsilon': 5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 5}								75
+0.0003177642822265625	3.468360220979045e-05	0.0	0.0	5	True	6	{'estimator__epsilon': 5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 6}								74
+0.0002926826477050781	7.856389624746202e-06	0.0	0.0	5	True	7	{'estimator__epsilon': 5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 7}								73
+0.0003142833709716797	3.61448856590907e-05	0.0	0.0	5	True	8	{'estimator__epsilon': 5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 8}								46
+0.00030517578125	1.4031495485738312e-05	0.0	0.0	5	True	9	{'estimator__epsilon': 5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 9}								71
+0.000323486328125	5.3682080761480225e-05	0.0	0.0	5	True	10	{'estimator__epsilon': 5, 'estimator__fit_intercept': True, 'preprocessing_1__k': 10}								70
+0.0029776573181152345	8.179604624736969e-05	0.0005002498626708984	1.5078462555005581e-05	5	False	1	{'estimator__epsilon': 5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 1}	0.28772537306359003	0.2102102096734777	-0.0151259581661487	0.2909723214286931	-0.15826616518386305	0.12423707179563077	0.17914644211903497	24
+0.0050922870635986325	0.0004064579515665085	0.000550222396850586	3.1719313854744324e-05	5	False	2	{'estimator__epsilon': 5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 2}	0.33543023798487925	0.22388553145120593	0.08511925365489081	0.26086207237772285	-0.11068772661118831	0.16000958558183132	0.15721197733084435	17
+0.0003814697265625	5.401556942822225e-05	0.0	0.0	5	False	3	{'estimator__epsilon': 5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 3}								69
+0.0005252838134765625	2.801571496873693e-05	0.0	0.0	5	False	4	{'estimator__epsilon': 5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 4}								68
+0.0005239486694335937	5.8088004343672764e-05	0.0	0.0	5	False	5	{'estimator__epsilon': 5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 5}								67
+0.00043964385986328125	8.825739274040585e-05	0.0	0.0	5	False	6	{'estimator__epsilon': 5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 6}								66
+0.0003180503845214844	2.2340215254063566e-05	0.0	0.0	5	False	7	{'estimator__epsilon': 5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 7}								65
+0.0005105018615722656	4.886368857113017e-05	0.0	0.0	5	False	8	{'estimator__epsilon': 5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 8}								64
+0.0005301952362060547	1.7170375724680938e-05	0.0	0.0	5	False	9	{'estimator__epsilon': 5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 9}								63
+0.0005607128143310547	1.7890864089485883e-05	0.0	0.0	5	False	10	{'estimator__epsilon': 5, 'estimator__fit_intercept': False, 'preprocessing_1__k': 10}								76
+0.00707859992980957	0.0016040751922633573	0.0007460117340087891	0.00012151790589341289	20	True	1	{'estimator__epsilon': 20, 'estimator__fit_intercept': True, 'preprocessing_1__k': 1}	0.7528146772039349	0.6893299803867208	0.782570335370834	0.7678089443219487	0.7927169232384388	0.7567240654078975	0.03656890519919929	6
+0.009310197830200196	0.0010231558294242565	0.0007808208465576172	0.00013622345492935074	20	True	2	{'estimator__epsilon': 20, 'estimator__fit_intercept': True, 'preprocessing_1__k': 2}	0.7542393939059309	0.7066928731363715	0.7492119315936209	0.7766037398020375	0.8064322318463606	0.7583822511691553	0.03294134647909458	2
+0.0005450725555419921	6.704259223613959e-05	0.0	0.0	20	True	3	{'estimator__epsilon': 20, 'estimator__fit_intercept': True, 'preprocessing_1__k': 3}								62
+0.0005767822265625	0.00012201268728408836	0.0	0.0	20	True	4	{'estimator__epsilon': 20, 'estimator__fit_intercept': True, 'preprocessing_1__k': 4}								60
+0.00043544769287109377	4.641431102337912e-05	0.0	0.0	20	True	5	{'estimator__epsilon': 20, 'estimator__fit_intercept': True, 'preprocessing_1__k': 5}								59
+0.00037012100219726565	4.728955436993826e-05	0.0	0.0	20	True	6	{'estimator__epsilon': 20, 'estimator__fit_intercept': True, 'preprocessing_1__k': 6}								58
+0.00041527748107910155	0.00011482852621557241	0.0	0.0	20	True	7	{'estimator__epsilon': 20, 'estimator__fit_intercept': True, 'preprocessing_1__k': 7}								57
+0.0005415439605712891	5.6375100250871814e-05	0.0	0.0	20	True	8	{'estimator__epsilon': 20, 'estimator__fit_intercept': True, 'preprocessing_1__k': 8}								56
+0.0003131389617919922	1.6011081291256576e-05	0.0	0.0	20	True	9	{'estimator__epsilon': 20, 'estimator__fit_intercept': True, 'preprocessing_1__k': 9}								55
+0.0003109455108642578	1.0993552812675964e-05	0.0	0.0	20	True	10	{'estimator__epsilon': 20, 'estimator__fit_intercept': True, 'preprocessing_1__k': 10}								54
+0.004506254196166992	0.0004271239293374446	0.0005721569061279297	2.063079925764399e-05	20	False	1	{'estimator__epsilon': 20, 'estimator__fit_intercept': False, 'preprocessing_1__k': 1}	0.2877253683163381	0.21021022472925366	-0.01512471578302188	0.2909722790383501	-0.15826615331805804	0.12423731407338522	0.1791462396222842	23
+0.005279684066772461	0.00021058181679364929	0.0005549907684326172	2.2775352044165268e-05	20	False	2	{'estimator__epsilon': 20, 'estimator__fit_intercept': False, 'preprocessing_1__k': 2}	0.33542997780589123	0.22388596550392892	0.08511898773635962	0.2608629282242424	-0.1106877615925963	0.16000973081591963	0.157212100093912	16
+0.00032753944396972655	2.6281212088503902e-05	0.0	0.0	20	False	3	{'estimator__epsilon': 20, 'estimator__fit_intercept': False, 'preprocessing_1__k': 3}								53
+0.00034046173095703125	3.775514595507095e-05	0.0	0.0	20	False	4	{'estimator__epsilon': 20, 'estimator__fit_intercept': False, 'preprocessing_1__k': 4}								52
+0.0003110408782958984	1.5041623897922141e-05	0.0	0.0	20	False	5	{'estimator__epsilon': 20, 'estimator__fit_intercept': False, 'preprocessing_1__k': 5}								51
+0.0003048896789550781	1.1689223093125388e-05	0.0	0.0	20	False	6	{'estimator__epsilon': 20, 'estimator__fit_intercept': False, 'preprocessing_1__k': 6}								50
+0.0003441810607910156	2.4893731288690157e-05	0.0	0.0	20	False	7	{'estimator__epsilon': 20, 'estimator__fit_intercept': False, 'preprocessing_1__k': 7}								49
+0.0003697395324707031	4.5973482520139596e-05	0.0	0.0	20	False	8	{'estimator__epsilon': 20, 'estimator__fit_intercept': False, 'preprocessing_1__k': 8}								48
+0.00048646926879882815	0.0002129264312905803	0.0	0.0	20	False	9	{'estimator__epsilon': 20, 'estimator__fit_intercept': False, 'preprocessing_1__k': 9}								114
+0.0005580425262451172	0.00011413609120881679	0.0	0.0	20	False	10	{'estimator__epsilon': 20, 'estimator__fit_intercept': False, 'preprocessing_1__k': 10}								140
