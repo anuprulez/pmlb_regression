@@ -38,6 +38,7 @@ folder_name = "tuning/"
 clf_names_dir = os.listdir(folder_name)
 
 excluded_clf = []
+excluded_datasets = ['215_2dplanes.tsv.tabular', '344_mv.tsv.tabular', '1201_BNG_breastTumor.tsv.tabular']
 
 clf_names_dir = [clf for clf in clf_names_dir if clf not in excluded_clf]
 
@@ -54,13 +55,14 @@ for clf in clf_names_dir:
     r2_dict[clf] = list()
     fit_time = list()
     for f_name in files:
-        f_path = data_path + "/" + f_name
-        df = pd.read_csv(f_path, sep="\t")
-        rank_test_score = df[df["rank_test_score"] == 1]
-        mean_test_score = rank_test_score["mean_test_score"]
-        fit_time_sec = rank_test_score["mean_fit_time"].iloc[0] + rank_test_score["mean_score_time"].iloc[0]
-        fit_time.append(fit_time_sec)
-        r2_scores.append(mean_test_score.iloc[0])
+        if f_name not in excluded_datasets:
+            f_path = data_path + "/" + f_name
+            df = pd.read_csv(f_path, sep="\t")
+            rank_test_score = df[df["rank_test_score"] == 1]
+            mean_test_score = rank_test_score["mean_test_score"]
+            fit_time_sec = rank_test_score["mean_fit_time"].iloc[0] + rank_test_score["mean_score_time"].iloc[0]
+            fit_time.append(fit_time_sec)
+            r2_scores.append(mean_test_score.iloc[0])
     r2_dict[clf] = r2_scores
     clf_sum_r2[clf] = np.sum(r2_scores)
     clf_names.append(clf)
@@ -181,11 +183,12 @@ for clf in clf_names_dir_tuning:
     r2_scores = list()
     opt_fnames = list()
     for f_name in files:
-        opt_fnames.append(f_name)
-        f_path = data_path + "/" + f_name
-        df = pd.read_csv(f_path, sep="\t")
-        rank_test_score = df[df["rank_test_score"] == 1]
-        mean_test_score = rank_test_score["mean_test_score"]
+        if f_name not in excluded_datasets:
+            opt_fnames.append(f_name)
+            f_path = data_path + "/" + f_name
+            df = pd.read_csv(f_path, sep="\t")
+            rank_test_score = df[df["rank_test_score"] == 1]
+            mean_test_score = rank_test_score["mean_test_score"]
         r2_scores.append(mean_test_score.iloc[0])
     clf_names_tuning.append(clf)
     r2_dict_tuning[clf] = r2_scores
@@ -201,12 +204,13 @@ for clf in clf_names_dir_no_tuning:
     r2_scores = list()
     no_opt_fnames = list()
     for f_name in files:
-        no_opt_fnames.append(f_name)
-        f_path = data_path + "/" + f_name
-        df = pd.read_csv(f_path, sep="\t")
-        rank_test_score = df[df["rank_test_score"] == 1]
-        mean_test_score = rank_test_score["mean_test_score"]
-        r2_scores.append(mean_test_score.iloc[0])
+        if f_name not in excluded_datasets:
+            no_opt_fnames.append(f_name)
+            f_path = data_path + "/" + f_name
+            df = pd.read_csv(f_path, sep="\t")
+            rank_test_score = df[df["rank_test_score"] == 1]
+            mean_test_score = rank_test_score["mean_test_score"]
+            r2_scores.append(mean_test_score.iloc[0])
     clf_names_no_tuning.append(clf)
     r2_dict_no_tuning[clf] = r2_scores
 
