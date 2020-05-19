@@ -9,15 +9,8 @@ import warnings
 import seaborn as sb
 import operator
 
-import plotly
-import plotly.graph_objs as go
-from plotly import tools
-import plotly.io as pio
 import matplotlib.gridspec as gridspec
 import seaborn as sns
-
-
-
 
 
 warnings.filterwarnings('ignore')
@@ -27,12 +20,12 @@ warnings.filterwarnings('ignore')
 
 rcParams['font.family'] = "serif"
 
-size_title = 11
-size_xlabel = 10
-size_ylabel = 10
-size_xticks = 8
-size_yticks = 8
-size_colorbar = 8
+size_title = 18
+size_xlabel = 16
+size_ylabel = 16
+size_xticks = 16
+size_yticks = 16
+size_colorbar = 14
 
 folder_name = "tuning/"
 clf_names_dir = os.listdir(folder_name)
@@ -253,7 +246,7 @@ plt.xlabel("Mean fit time (in seconds)", size=size_xlabel)
 plt.ylabel("Mean R2 score", size=size_ylabel)
 plt.xticks(size=size_xticks)
 plt.yticks(size=size_yticks)
-ax.legend(bbox_to_anchor=(1.0, 1.00), shadow=True, ncol=1, prop={'size': size_yticks})
+ax.legend(bbox_to_anchor=(1.0, 1.00), shadow=True, ncol=1, prop={'size': size_colorbar})
 plt.grid(True)
 
 # -----------------
@@ -289,9 +282,9 @@ plt.xlabel('Number of datasets', size=size_xlabel)
 plt.yticks(range(n_clf), list(regressors_list.values()), size=size_yticks)
 plt.xticks(size=size_xticks)
 plt.imshow(r2_clf_matrix, cmap='Blues', aspect=5.5)
-cbar = plt.colorbar(shrink=0.8)
-ticklabs = cbar.ax.get_yticklabels()
-cbar.ax.set_yticklabels(ticklabs, fontsize=size_yticks)
+cbar = plt.colorbar(shrink=0.8, ticks=[0, 0.5, 1, 1.5])
+cbar.ax.set_yticklabels([0, 0.5, 1, 1.5], fontsize=size_yticks)
+#cbar.ax.set_yticklabels(ticklabs, fontsize=size_yticks)
 
 # ---------------
 # Box-plots for hyperparameter tuning improvements
